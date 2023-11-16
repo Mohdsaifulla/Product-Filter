@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-
+import { useSearchContext } from "../context/searchContext";
 
 const Header = () => {
-  const [search, setSearch] = useState("");
+  const { handleSearch } = useSearchContext();
   const handleInput = (e) => {
-    setSearch(e.target.value);
+    handleSearch(e.target.value);
   };
-  console.log(search);
+  // console.log(search);
   return (
-    <div className=" border bg-gray-400">
+    <div className=" border bg-gray-400 sticky top-0 left-0 w-full">
       <div className="p-2 rounded-lg">
         <input
           type="text"
